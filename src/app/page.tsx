@@ -92,6 +92,10 @@ export default function Home() {
 
         <p className="text-gray-600">Generate 3 personalized cold emails + 2 follow-ups in seconds. First 5 generations are free.</p>
 
+        <a href="/landing" className="text-sm text-blue-600 underline">
+          Join the waitlist
+        </a>
+
         <p className="text-sm text-gray-500">Free credits left: {credits}</p>
 
 
