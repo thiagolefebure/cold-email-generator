@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 
@@ -34,13 +34,25 @@ export default function Home() {
 
   });
 
+  const [isPro, setIsPro] = useState(false);
+
+  useEffect(() => {
+
+    if (typeof window === "undefined") return;
+
+    const pro = localStorage.getItem("is_pro") === "true";
+
+    setIsPro(pro);
+
+  }, []);
+
 
 
   async function onSubmit(e: React.FormEvent) {
 
     e.preventDefault();
 
-    if (credits <= 0) {
+    if (!isPro && credits <= 0) {
 
       alert("You've used your free credits. Please upgrade to continue.");
 
@@ -68,15 +80,19 @@ export default function Home() {
 
     setLoading(false);
 
-    setCredits((c) => {
+    if (!isPro) {
 
-      const next = c - 1;
+      setCredits((c) => {
 
-      localStorage.setItem("credits", String(next));
+        const next = c - 1;
 
-      return next;
+        localStorage.setItem("credits", String(next));
 
-    });
+        return next;
+
+      });
+
+    }
 
   }
 
@@ -90,13 +106,23 @@ export default function Home() {
 
         <h1 className="text-2xl font-bold text-gray-900">{process.env.NEXT_PUBLIC_APP_NAME}</h1>
 
+        <p className="text-xs text-gray-500">
+          Plan: {isPro ? "Pro (unlimited generations)" : "Free (5 credits)"}
+        </p>
+
+        <p className="text-sm text-gray-500">Free credits left: {credits}</p>
+
+        {!isPro && (
+          <a href="/pricing" className="text-sm text-blue-600 underline">
+            Upgrade to Pro
+          </a>
+        )}
+
         <p className="text-gray-600">Generate 3 personalized cold emails + 2 follow-ups in seconds. First 5 generations are free.</p>
 
         <a href="/landing" className="text-sm text-blue-600 underline">
           Join the waitlist
         </a>
-
-        <p className="text-sm text-gray-500">Free credits left: {credits}</p>
 
 
 
