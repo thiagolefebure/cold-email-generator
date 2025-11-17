@@ -84,11 +84,11 @@ export default function Home() {
 
   return (
 
-    <main className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
+    <main className="min-h-screen bg-gray-50 text-gray-900 flex items-center justify-center p-6">
 
       <div className="w-full max-w-3xl bg-white rounded-2xl shadow p-6 space-y-6">
 
-        <h1 className="text-2xl font-bold">{process.env.NEXT_PUBLIC_APP_NAME}</h1>
+        <h1 className="text-2xl font-bold text-gray-900">{process.env.NEXT_PUBLIC_APP_NAME}</h1>
 
         <p className="text-gray-600">Generate 3 personalized cold emails + 2 follow-ups in seconds. First 5 generations are free.</p>
 
@@ -106,7 +106,7 @@ export default function Home() {
 
             required
 
-            className="border rounded-lg p-3"
+            className="border rounded-lg p-3 text-gray-900 placeholder:text-gray-500"
 
             placeholder="Industry (e.g., SaaS, eCom)"
 
@@ -120,7 +120,7 @@ export default function Home() {
 
             required
 
-            className="border rounded-lg p-3"
+            className="border rounded-lg p-3 text-gray-900 placeholder:text-gray-500"
 
             placeholder="Target role (e.g., Head of Marketing)"
 
@@ -134,7 +134,7 @@ export default function Home() {
 
             required
 
-            className="border rounded-lg p-3 md:col-span-2"
+            className="border rounded-lg p-3 md:col-span-2 text-gray-900 placeholder:text-gray-500"
 
             placeholder="Your offer (what you sell)"
 
@@ -146,7 +146,7 @@ export default function Home() {
 
           <input
 
-            className="border rounded-lg p-3"
+            className="border rounded-lg p-3 text-gray-900 placeholder:text-gray-500"
 
             placeholder="Prospect company (optional)"
 
@@ -158,7 +158,7 @@ export default function Home() {
 
           <select
 
-            className="border rounded-lg p-3"
+            className="border rounded-lg p-3 text-gray-900 placeholder:text-gray-500"
 
             value={form.tone}
 
@@ -196,11 +196,11 @@ export default function Home() {
 
         <div className="grid gap-2">
 
-          <h2 className="font-semibold">Output</h2>
+          <h2 className="font-semibold text-gray-900">Output</h2>
 
           <textarea
 
-            className="w-full h-80 border rounded-lg p-3 font-mono text-sm"
+            className="w-full h-80 border rounded-lg p-3 font-mono text-sm text-gray-900 placeholder:text-gray-500"
 
             value={result}
 

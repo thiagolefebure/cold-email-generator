@@ -40,13 +40,13 @@ export default function Landing() {
 
   return (
 
-    <main className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
+    <main className="min-h-screen bg-gray-50 text-gray-900 flex items-center justify-center p-6">
 
       <div className="w-full max-w-3xl bg-white rounded-2xl shadow p-6 space-y-6">
 
         <header className="space-y-2">
 
-          <h1 className="text-3xl font-bold">ColdStart — Cold emails that get replies</h1>
+          <h1 className="text-3xl font-bold text-gray-900">ColdStart — Cold emails that get replies</h1>
 
           <p className="text-gray-600">
 
